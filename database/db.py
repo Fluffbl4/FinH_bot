@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String, Date, Time, DECIMAL, ForeignKey, Boolean, Text
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, declarative_base
 
 from connection_db import engine
 
@@ -34,8 +33,8 @@ class Income(Base):
 
 
 # Таблица категорий расходов
-class Caregory(Base):
-    __tablename_ = 'categories'
+class Category(Base):
+    __tablename__ = 'categories'
     category_id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False)
 
